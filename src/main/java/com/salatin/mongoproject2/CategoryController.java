@@ -1,7 +1,9 @@
 package com.salatin.mongoproject2;
 
+import com.salatin.mongoproject2.exception.CategoryNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,8 +16,13 @@ public class CategoryController {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    @GetMapping("/")
+    @GetMapping
     public List<Category> findCategories() {
         return categoryRepository.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Category findOneCategories(@PathVariable String id) {
+        return categoryRepository.findById(id).orElseThrow(()-> new CategoryNotFoundException(id));
     }
 }
