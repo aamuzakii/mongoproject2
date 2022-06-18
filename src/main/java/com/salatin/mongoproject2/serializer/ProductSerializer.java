@@ -11,7 +11,6 @@ public class ProductSerializer extends Product {
     this.setPrice(param.getPrice());
     this.setImage_url(param.getImage_url());
     this.setId(param.getId());
-    this.setCategory(param.getCategory());
     this.intPrice = param.getPrice();
 
     System.out.println(param.toString());

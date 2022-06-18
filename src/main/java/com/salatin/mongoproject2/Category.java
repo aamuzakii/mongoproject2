@@ -1,7 +1,11 @@
 package com.salatin.mongoproject2;
 
+import com.salatin.mongoproject2.model.Product;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.List;
 
 @Document(collection = "categories")
 public class Category {
@@ -9,6 +13,8 @@ public class Category {
     @Id
     private String id;
     private String name;
+
+    private List<Product> products;
 
     public Category() {
     }
@@ -27,6 +33,14 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 
     @Override
