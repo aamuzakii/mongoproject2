@@ -1,9 +1,7 @@
 package com.salatin.mongoproject2.model;
 
-import com.salatin.mongoproject2.Category;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Document(collection = "products")
 public class Product {

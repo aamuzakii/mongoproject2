@@ -1,4 +1,4 @@
-package com.salatin.mongoproject2;
+package com.salatin.mongoproject2.model;
 
 import com.salatin.mongoproject2.model.Product;
 import org.springframework.data.annotation.Id;

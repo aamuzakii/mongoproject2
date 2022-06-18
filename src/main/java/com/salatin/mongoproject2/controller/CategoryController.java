@@ -1,6 +1,8 @@
-package com.salatin.mongoproject2;
+package com.salatin.mongoproject2.controller;
 
+import com.salatin.mongoproject2.repository.CategoryRepository;
 import com.salatin.mongoproject2.exception.CategoryNotFoundException;
+import com.salatin.mongoproject2.model.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
