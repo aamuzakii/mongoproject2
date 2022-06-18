@@ -6,11 +6,15 @@ public class ProductSerializer extends Product {
 
   private int intPrice;
 
-  ProductSerializer() {
-    this.intPrice = 123;
-    System.out.println(super.image_url);
-    System.out.println(this.image_url);
-    System.out.println(image_url);
+  public ProductSerializer(Product param) {
+    this.setName(param.getName());
+    this.setPrice(param.getPrice());
+    this.setImage_url(param.getImage_url());
+    this.setId(param.getId());
+    this.setCategory(param.getCategory());
+    this.intPrice = param.getPrice();
+
+    System.out.println(param.toString());
   }
 
   public int getInt_price() {

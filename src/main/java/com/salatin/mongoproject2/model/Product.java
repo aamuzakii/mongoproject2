@@ -1,18 +1,21 @@
 package com.salatin.mongoproject2.model;
 
+import com.salatin.mongoproject2.Category;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @Document(collection = "products")
 public class Product {
 
-    @MongoId
+    @Id
     private String id;
     private String name;
     private int price;
     private String image_url;
     private String description;
     private String stock_type;
+    private Category category;
 
     public Product() {
     }
@@ -65,6 +68,14 @@ public class Product {
         this.stock_type = stock_type;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -74,6 +85,7 @@ public class Product {
                 ", image_url='" + image_url + '\'' +
                 ", description='" + description + '\'' +
                 ", stock_type='" + stock_type + '\'' +
+                ", category=" + category +
                 '}';
     }
 }
