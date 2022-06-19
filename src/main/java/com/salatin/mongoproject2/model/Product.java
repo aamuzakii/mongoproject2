@@ -13,6 +13,7 @@ public class Product {
     private String image_url;
     private String description;
     private String stock_type;
+    private String category_id;
 
     public Product() {
     }
@@ -65,6 +66,14 @@ public class Product {
         this.stock_type = stock_type;
     }
 
+    public String getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(String category_id) {
+        this.category_id = category_id;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -74,6 +83,7 @@ public class Product {
                 ", image_url='" + image_url + '\'' +
                 ", description='" + description + '\'' +
                 ", stock_type='" + stock_type + '\'' +
+                ", category_id='" + category_id + '\'' +
                 '}';
     }
 }
