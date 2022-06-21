@@ -28,20 +28,19 @@ public class ProductController {
 
     @GetMapping
     public ArrayList<ProductSerializer> getAllProduct() {
-        List<Product> aa = productRepository.findAll();
-        ArrayList<ProductSerializer> coll = new ArrayList<ProductSerializer>();
-        aa.forEach((Product item) -> {
+        List<Product> products = productRepository.findAll();
+        ArrayList<ProductSerializer> result = new ArrayList<ProductSerializer>();
+        products.forEach((Product item) -> {
               ProductSerializer single = new ProductSerializer(item);
-              String cate_id = item.getCategory_id();
-              if (cate_id != null) {
-              System.out.println(cate_id != null);
+              String categoryId = item.getCategory_id();
+              if (categoryId != null) {
               Optional<Category> category  = categoryRepository.findById(item.getCategory_id());
                 single.setCategory(category);
             }
-            coll.add(single);
+            result.add(single);
         });
 
 
-      return coll;
+      return result;
     }
 }
