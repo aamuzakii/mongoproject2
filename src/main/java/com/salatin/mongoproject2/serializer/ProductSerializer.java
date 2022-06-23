@@ -1,9 +1,8 @@
 package com.salatin.mongoproject2.serializer;
 
-import com.salatin.mongoproject2.model.Category;
-import com.salatin.mongoproject2.model.Product;
-
 import java.util.Optional;
+
+import com.salatin.mongoproject2.model.Product;
 
 public class ProductSerializer extends Product {
 

@@ -1,20 +1,20 @@
 package com.salatin.mongoproject2.controller;
 
-import com.salatin.mongoproject2.exception.CategoryNotFoundException;
-import com.salatin.mongoproject2.model.Category;
-import com.salatin.mongoproject2.model.Product;
-import com.salatin.mongoproject2.repository.CategoryRepository;
-import com.salatin.mongoproject2.repository.ProductRepository;
-import com.salatin.mongoproject2.serializer.ProductSerializer;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import com.salatin.mongoproject2.model.Category;
+import com.salatin.mongoproject2.model.Product;
+import com.salatin.mongoproject2.repository.CategoryRepository;
+import com.salatin.mongoproject2.repository.ProductRepository;
+import com.salatin.mongoproject2.serializer.ProductSerializer;
 
 @RestController
 @RequestMapping("/products")
